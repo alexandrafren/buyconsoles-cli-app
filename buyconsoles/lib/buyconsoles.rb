@@ -4,4 +4,4 @@ require "nokogiri"
 
 require_relative "./buyconsoles/version"
 require_relative "./buyconsoles/cli"
-#require_relative "./buyconsoles/HOLDER"
+require_relative "./buyconsoles/nintendo"

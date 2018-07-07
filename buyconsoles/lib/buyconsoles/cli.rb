@@ -1,4 +1,5 @@
 class Buyconsoles::CLI
+
   def call
     puts "Welcome to Buy Consoles! Which console brand would you like to see prices for today?"
     list_console_brands
@@ -33,7 +34,9 @@ class Buyconsoles::CLI
       puts "1. Wii U 8GB White 2. Wii U 32GB Black 3. Nintendo Switch(Red & Blue)"
       input = gets.chomp
       if input == "1"
-        Buyconsoles::Nintendo.wiiu8deals
+        Buyconsoles::Nintendo.wiiu8deals.each_with_index do |item, i|
+        puts "#{i+1}. #{item.name} #{item.price}"
+        end
       elsif input == "2"
         Buyconsoles::Nintendo.wiiu32deals
       elsif input == "3"
