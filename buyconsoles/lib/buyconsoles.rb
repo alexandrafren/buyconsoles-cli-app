@@ -1,5 +1,7 @@
-require "buyconsoles/version"
+require "open-uri"
+require "nokogiri"
 
-module Buyconsoles
-  # Your code goes here...
-end
+
+require_relative "./buyconsoles/version"
+require_relative "./buyconsoles/cli"
+require_relative "./buyconsoles/HOLDER"
