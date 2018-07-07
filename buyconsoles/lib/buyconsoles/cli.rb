@@ -31,6 +31,7 @@ class Buyconsoles::CLI
 
     def list_microsoft_consoles
       puts "1.Xbox One S 500GB 2. Xbox One X 1TB"
+      microsoft_menu
     end
 
     def list_nintendo_consoles
@@ -46,7 +47,21 @@ class Buyconsoles::CLI
         Buyconsoles::Sony.pro_1tbdeals
       elsif input == "3"
         Buyconsoles::Song.slim_500gbdeals
-      elsif input == "return"
+      elsif input == "exit"
+        list_console_brands
+      else
+        "I don't understand your input. Please enter 1-3 or exit."
+      end
+    end
+
+    def microsoft_menu
+      puts "Which Microsoft Console would you like to see prices for? Enter 1-2, or exit to return to main menu"
+      input = gets.chomp
+      if input == "1"
+        Buyconsoles::Microsoft.s500gbdeals
+      elsif input == "2"
+        Buyconsoles::Microsoft.x1tbdeals
+      elsif input == "exit"
         list_console_brands
       else
         "I don't understand your input. Please enter 1-3 or return."
