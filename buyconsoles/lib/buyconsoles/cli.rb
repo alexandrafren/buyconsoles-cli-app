@@ -36,6 +36,23 @@ class Buyconsoles::CLI
 
     def list_nintendo_consoles
       puts "1. Wii U 8GB White 2. Wii U 32GB Black 3. Nintendo Switch(Red & Blue)"
+      nintendo_menu
+    end
+
+    def nintendo_menu
+      puts "Which Nintendo Console would you like to see prices for? Enter 1-3, or exit to return to main menu"
+      input = gets.chomp
+      if input == "1"
+        Buyconsoles::Nintendo.wiiu8deals
+      elsif input == "2"
+        Buyconsoles::Nintendo.wiiu32deals
+      elsif input == "3"
+        Buyconsoles::Nintendo.switchdeals
+      elsif input == "exit"
+        list_console_brands
+      else
+        "I don't understand your input. Please enter 1-3 or exit."
+      end
     end
 
     def sony_menu
