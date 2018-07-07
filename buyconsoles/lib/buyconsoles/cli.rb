@@ -11,16 +11,30 @@ class Buyconsoles::CLI
       input = gets.chomp
       case input
       when "1"
-        sony_consoles
+        list_sony_consoles
       when "2"
-        microsoft_consoles
+        list_microsoft_consoles
       when "3"
-        nintendo_consoles
+        list_nintendo_consoles
       when "exit"
         goodbye
       else
         puts "I don't understand your input. Please try again."
       end
     end
+    end
+
+    def list_sony_consoles
+      puts "1. Sony Playstation 4 Slim 1TB Console 2. Playstation 4 Pro 1TB Console 3. Playstation 4 Slim 500GB Console"
+    end
+
+    def list_microsoft_consoles
+      puts "1.Xbox One S 500GB 2. Xbox One X 1TB"
+    end
+
+    def list_nintendo_consoles
+      puts "1. Wii U 8GB White 2. Wii U 32GB Black 3. Nintendo Switch(Red & Blue)"
+    end
+
 
   end
