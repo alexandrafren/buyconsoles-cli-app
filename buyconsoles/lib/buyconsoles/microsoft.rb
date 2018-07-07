@@ -1,0 +1,2 @@
+class Buyconsoles::Microsoft
+end
