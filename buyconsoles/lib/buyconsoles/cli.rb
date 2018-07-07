@@ -26,6 +26,7 @@ class Buyconsoles::CLI
 
     def list_sony_consoles
       puts "1. Sony Playstation 4 Slim 1TB Console 2. Playstation 4 Pro 1TB Console 3. Playstation 4 Slim 500GB Console"
+      sony_menu
     end
 
     def list_microsoft_consoles
@@ -34,6 +35,22 @@ class Buyconsoles::CLI
 
     def list_nintendo_consoles
       puts "1. Wii U 8GB White 2. Wii U 32GB Black 3. Nintendo Switch(Red & Blue)"
+    end
+
+    def sony_menu
+      puts "Which Sony Console would you like to see prices for? Enter 1-3, or exit to return to main menu"
+      input = gets.chomp
+      if input == "1"
+        Buyconsoles::Sony.slim_1tbdeals
+      elsif input == "2"
+        Buyconsoles::Sony.pro_1tbdeals
+      elsif input == "3"
+        Buyconsoles::Song.slim_500gbdeals
+      elsif input == "return"
+        list_console_brands
+      else
+        "I don't understand your input. Please enter 1-3 or return."
+      end
     end
 
 
