@@ -24,6 +24,10 @@ class Buyconsoles::CLI
     end
     end
 
+    def goodbye
+      puts "Check back tomorrow for more deals!"
+    end
+
     def nintendo_menu
       puts "Which Nintendo Console would you like to see prices for? Enter 1-3, or exit to return to main menu"
       puts "1. Wii U 8GB White 2. Wii U 32GB Black 3. Nintendo Switch(Red & Blue)"
