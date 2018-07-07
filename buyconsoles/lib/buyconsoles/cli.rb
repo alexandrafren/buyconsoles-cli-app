@@ -5,14 +5,22 @@ class Buyconsoles::CLI
   end
 
   def list_console_brands
+    input = nil
     puts "1. Sony 2. Microsoft 3. Nintendo"
-    input = gets.chomp
-    case input
-    when "1"
-      sony_consoles
-    when "2"
-      microsoft_consoles
-    when "3"
-      nintendo_consoles
+    while input != "exit"
+      input = gets.chomp
+      case input
+      when "1"
+        sony_consoles
+      when "2"
+        microsoft_consoles
+      when "3"
+        nintendo_consoles
+      when "exit"
+        goodbye
+      else
+        puts "I don't understand your input. Please try again."
+      end
     end
+
   end
