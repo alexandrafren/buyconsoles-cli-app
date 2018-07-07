@@ -25,13 +25,7 @@ class Buyconsoles::Nintendo
     walmart_wiiu8.retailer = "Walmart"
     walmart_wiiu8.link = "https://www.walmart.com/ip/Refurbished-Nintendo-Wii-U-Console-8GB-Basic-Set-White/836623512"
 
-    target_wiiu8 = self.name
-    target_wiiu8.name = ""
-    target_wiiu8.price = ""
-    target_wiiu8.retailer = ""
-    target_wiiu8.link = ""
-
-    [amazon_wiiu8,gamestop_wiiu8,walmart_wiiu8,target_wiiu8]
+    [amazon_wiiu8,gamestop_wiiu8,walmart_wiiu8]
   end
 
   def wiiu32deals
@@ -56,13 +50,7 @@ class Buyconsoles::Nintendo
     walmart_wiiu32.retailer = "Walmart"
     walmart_wiiu32.link = "https://www.walmart.com/ip/Refurbished-Nintendo-Wii-U-Console-8GB-Basic-Set-White/836623512"
 
-    target_wiiu32 = self.name
-    target_wiiu32.name = ""
-    target_wiiu32.price = ""
-    target_wiiu32.retailer = ""
-    target_wiiu32.link = ""
-
-    [amazon_wiiu32,gamestop_wiiu32,walmart_wiiu32,target_wiiu32]
+    [amazon_wiiu32,gamestop_wiiu32,walmart_wiiu32]
   end
 
   def switchdeals
@@ -90,8 +78,8 @@ class Buyconsoles::Nintendo
     target_switch = self.name
     target_switchhtml = Nokogiri::HTML(open(https://www.target.com/p/nintendo-174-switch-153-with-neon-blue-and-neon-red-joy-con-153/-/A-52189185))
     target_switch.name = target_switchhtml.css("span").attribute("name").text
-    target_switch.price = ""
-    target_switch.retailer = ""
+    target_switch.price = target_switchhtml.css(".h-text-x1").text
+    target_switch.retailer = "Target"
     target_switch.link = "https://www.target.com/p/nintendo-174-switch-153-with-neon-blue-and-neon-red-joy-con-153/-/A-52189185"
 
     [amazon_switch,gamestop_switch,walmart_switch,target_switch]
